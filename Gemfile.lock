@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    peatio-runebase (0.2.0)
+    peatio-dogecoin (0.2.0)
       activesupport (~> 5.2.3)
       better-faraday (~> 1.0.5)
       faraday (~> 0.15.4)
@@ -71,7 +71,7 @@ GEM
       byebug (~> 11.0)
       pry (~> 0.10)
     public_suffix (3.0.3)
-    rake (10.5.0)
+    rake (13.0.1)
     rspec (3.8.0)
       rspec-core (~> 3.8.0)
       rspec-expectations (~> 3.8.0)
@@ -100,9 +100,9 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 1.16)
   mocha (~> 1.8)
-  peatio-runebase!
+  peatio-dogecoin!
   pry-byebug
-  rake (~> 10.0)
+  rake (~> 13.0)
   rspec (~> 3.0)
   webmock (~> 3.5)
 
