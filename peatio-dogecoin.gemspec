@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Gem for extending Peatio plugable system with Dogecoin implementation.}
   spec.description   = %q{Dogecoin Peatio gem which implements Peatio::Blockchain::Abstract & Peatio::Wallet::Abstract.}
-  spec.homepage      = "https://openware.com/"
+  spec.homepage      = "https://www.runebase.io/"
   spec.license       = "MIT"
 
   # Specify which files should be added to the gem when it is released.
@@ -35,4 +35,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "webmock", "~> 3.5"
+  spec.add_development_dependency "net-http-persistent", "~> 3.0.0"
 end
