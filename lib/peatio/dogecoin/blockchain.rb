@@ -19,10 +19,12 @@ module Peatio
 
       def fetch_block!(block_number)
         block_hash = client.json_rpc(:getblockhash, [block_number])
-        block_test = client.json_rpc(:getblock, ["#{block_hash}"])
-        puts"#{block_test}"
+        block_fetch = client.json_rpc(:getblock, ["#{block_hash}"])
+        puts "#{block_fetch}"
+        block_json = eval(block_fetch)
+        puts "#{block_json}"
 
-        client.json_rpc(:getblock, ["#{block_hash}"])
+        block_json
           .fetch('tx').each_with_object([]) do |tx, txs_array|
             txs = build_transaction(tx).map do |ntx|
               Peatio::Transaction.new(ntx.merge(block_number: block_number))
