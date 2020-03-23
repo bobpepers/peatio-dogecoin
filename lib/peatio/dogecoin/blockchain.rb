@@ -19,6 +19,8 @@ module Peatio
 
       def fetch_block!(block_number)
         block_hash = client.json_rpc(:getblockhash, [block_number])
+        block_test = client.json_rpc(:getblock, ["#{block_hash}"])
+        puts"#{block_test}"
 
         client.json_rpc(:getblock, ["#{block_hash}"])
           .fetch('tx').each_with_object([]) do |tx, txs_array|
