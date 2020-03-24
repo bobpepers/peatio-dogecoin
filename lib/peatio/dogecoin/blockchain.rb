@@ -19,12 +19,9 @@ module Peatio
 
       def fetch_block!(block_number)
         block_hash = client.json_rpc(:getblockhash, [block_number])
-        block_fetch = client.json_rpc(:getblock, ["#{block_hash}"])
-        block_json = JSON.parse(block_fetch)
-        puts JSON.pretty_generate(block_json)
 
-        block_json
-          .fetch('tx').each_with_object([]) do |tx, txs_array|
+        client.json_rpc(:getblock, [block_hash]).fetch('tx')
+          .each_with_object([]) do |tx, txs_array|
             txs = build_transaction(tx).map do |ntx|
               Peatio::Transaction.new(ntx.merge(block_number: block_number))
             end
@@ -57,7 +54,7 @@ module Peatio
       private
 
       def build_transaction(tx_hash)
-        tx_hash.fetch('vout')
+        client.json_rpc(:getrawtransaction, [tx_hash, true]).fetch('vout')
           .select do |entry|
             entry.fetch('value').to_d > 0 &&
             entry['scriptPubKey'].has_key?('addresses')

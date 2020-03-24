@@ -1,19 +1,20 @@
 PATH
   remote: .
   specs:
-    peatio-dogecoin (0.2.1)
+    peatio-dogecoin (0.2.51)
       activesupport (~> 5.2.3)
       better-faraday (~> 1.0.5)
       faraday (~> 0.15.4)
+      json (~> 2.2)
       memoist (~> 0.16.0)
       peatio (~> 0.6.1)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    activemodel (5.2.4.1)
-      activesupport (= 5.2.4.1)
-    activesupport (5.2.4.1)
+    activemodel (5.2.4.2)
+      activesupport (= 5.2.4.2)
+    activesupport (5.2.4.2)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
@@ -47,6 +48,7 @@ GEM
     http_parser.rb (0.6.0)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
+    json (2.3.0)
     jwt (2.2.1)
     memoist (0.16.2)
     metaclass (0.0.4)
